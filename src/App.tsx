@@ -1,52 +1,90 @@
 import { Typewriter } from "react-simple-typewriter";
+import { motion } from "framer-motion";
 
 export default function App() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-6 bg-[#0c0c0c] text-[#e5e5e5] font-[inherit] overflow-hidden">
-      <div className="w-full max-w-md space-y-3 text-sm leading-relaxed text-center sm:text-base md:text-lg">
-        {/* Top line */}
-        <p className="text-neutral-200 text-base sm:text-lg md:text-xl font-[inherit]">
-          fullstack dev <span className="animate-blink">|</span> @{" "}
-          <a
-            href="https://tranvu.dev"
-            className="underline hover:text-indigo-400"
-          >
-            tranvu.dev
-          </a>
-        </p>
+    <motion.main
+      className="flex flex-col items-center justify-center w-full h-screen text-center px-[max(env(safe-area-inset-left),1rem)] pb-[max(env(safe-area-inset-bottom),2rem)] pt-[max(env(safe-area-inset-top),2rem)] font-sans"
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <motion.h1
+        className="text-base font-medium sm:text-lg"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
+      >
+        fullstack dev <span className="mx-1">|</span>
+        <span className="font-medium text-muted-foreground">tranvu.dev</span>
+      </motion.h1>
 
-        {/* Typewriter effect */}
-        <div className="text-neutral-500 min-h-[1.5rem] text-sm sm:text-base font-[inherit]">
-          <Typewriter
-            words={[
-              "powered by TypeScript",
-              "powered by React",
-              "powered by Vite",
-              "powered by clean code",
-              "powered by caffeine ☕",
-            ]}
-            loop={true}
-            cursor
-            cursorStyle="|"
-            typeSpeed={40}
-            deleteSpeed={30}
-            delaySpeed={1500}
-          />
-        </div>
+      <motion.p
+        className="mt-6 text-sm text-neutral-500 dark:text-neutral-400"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.9, duration: 0.6 }}
+      >
+        Things that work. Nothing more.
+      </motion.p>
 
-        {/* Bottom links */}
-        <p className="text-xs sm:text-sm md:text-base text-neutral-600 font-[inherit]">
-          Find my{" "}
-          <a href="/projects" className="underline hover:text-indigo-400">
-            Projects
-          </a>{" "}
-          or check out the{" "}
-          <a href="/blog" className="underline hover:text-indigo-400">
-            Blog
-          </a>
-          .
-        </p>
-      </div>
-    </main>
+      {/* <motion.p
+        className="mt-6 text-sm text-neutral-500 dark:text-neutral-400"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.5 }}
+      >
+        Find my{" "}
+        <a href="/projects" className="link-clean">
+          Projects
+        </a>{" "}
+        or check out the{" "}
+        <a href="/blog" className="link-clean">
+          Blog
+        </a>
+        .
+      </motion.p> */}
+
+      <motion.p
+        className="mt-2 text-sm text-neutral-500 dark:text-neutral-400"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.4, duration: 0.5 }}
+      >
+        ✉️{" "}
+        <a href="mailto:hi@tranvu.dev" className="link-clean">
+          hi@tranvu.dev
+        </a>{" "}
+        /{" "}
+        <a href="mailto:contact@tranvu.dev" className="link-clean">
+          contact@tranvu.dev
+        </a>
+      </motion.p>
+
+      <motion.div
+        className="flex justify-center mt-8"
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.7, duration: 0.6 }}
+      ></motion.div>
+
+      <motion.p
+        className="mt-4 text-sm text-zinc-600 dark:text-neutral-400"
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.6 }}
+      >
+        powered by{" "}
+        <Typewriter
+          words={["TypeScript", "Vercel", "V0", "clean code ✨", "coffee ☕"]}
+          loop={true}
+          cursor
+          cursorStyle="|"
+          typeSpeed={40}
+          deleteSpeed={40}
+          delaySpeed={1800}
+        />
+      </motion.p>
+    </motion.main>
   );
 }

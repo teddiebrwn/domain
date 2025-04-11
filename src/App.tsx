@@ -2,7 +2,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="min-h-screen w-full bg-[#1a1a1a] flex items-center justify-center">
+    <div className="h-screen w-screen bg-[#1a1a1a] flex items-center justify-center">
       <div
         className="
           bg-black rounded-3xl shadow-2xl text-center
@@ -10,7 +10,6 @@ function App() {
           sm:px-10 sm:py-6
           md:px-16 md:py-8
           lg:px-24 lg:py-10
-          max-w-full
         "
       >
         <h1

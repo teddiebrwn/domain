@@ -68,7 +68,7 @@ export default function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
-          powered by{" "}
+          Powered by{" "}
           <Typewriter
             words={["TypeScript", "Vercel", "V0", "clean code ✨", "coffee ☕"]}
             loop={true}

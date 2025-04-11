@@ -2,7 +2,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function App() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-6 bg-[#0c0c0c] text-[#e5e5e5] font-[inherit]">
+    <main className="min-h-screen flex items-center justify-center px-6 bg-[#0c0c0c] text-[#e5e5e5] font-[inherit] overflow-hidden">
       <div className="w-full max-w-md space-y-3 text-sm leading-relaxed text-center sm:text-base md:text-lg">
         {/* Top line */}
         <p className="text-neutral-200 text-base sm:text-lg md:text-xl font-[inherit]">
@@ -36,13 +36,13 @@ export default function App() {
 
         {/* Bottom links */}
         <p className="text-xs sm:text-sm md:text-base text-neutral-600 font-[inherit]">
-          find my{" "}
+          Find my{" "}
           <a href="/projects" className="underline hover:text-indigo-400">
-            projects
+            Projects
           </a>{" "}
           or check out the{" "}
           <a href="/blog" className="underline hover:text-indigo-400">
-            blog
+            Blog
           </a>
           .
         </p>

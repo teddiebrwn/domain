@@ -12,6 +12,9 @@ export default {
       animation: {
         blink: "blink 1s step-start infinite",
       },
+      fontFamily: {
+        sf: ["SF Pro Text", "Inter", "sans-serif"],
+      },
     },
   },
   plugins: [],

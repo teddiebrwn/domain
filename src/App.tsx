@@ -2,10 +2,10 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function App() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-6 bg-[#0c0c0c] text-[#e5e5e5] font-sans">
+    <main className="min-h-screen flex items-center justify-center px-6 bg-[#0c0c0c] text-[#e5e5e5] font-[inherit]">
       <div className="w-full max-w-md space-y-3 text-sm leading-relaxed text-center sm:text-base md:text-lg">
         {/* Top line */}
-        <p className="text-base text-neutral-200 sm:text-lg md:text-xl">
+        <p className="text-neutral-200 text-base sm:text-lg md:text-xl font-[inherit]">
           fullstack dev <span className="animate-blink">|</span> @{" "}
           <a
             href="https://tranvu.dev"
@@ -16,7 +16,7 @@ export default function App() {
         </p>
 
         {/* Typewriter effect */}
-        <div className="text-neutral-500 min-h-[1.5rem] text-sm sm:text-base">
+        <div className="text-neutral-500 min-h-[1.5rem] text-sm sm:text-base font-[inherit]">
           <Typewriter
             words={[
               "powered by TypeScript",
@@ -35,14 +35,14 @@ export default function App() {
         </div>
 
         {/* Bottom links */}
-        <p className="text-xs sm:text-sm md:text-base text-neutral-600">
-          Find my{" "}
+        <p className="text-xs sm:text-sm md:text-base text-neutral-600 font-[inherit]">
+          find my{" "}
           <a href="/projects" className="underline hover:text-indigo-400">
-            Projects
+            projects
           </a>{" "}
           or check out the{" "}
           <a href="/blog" className="underline hover:text-indigo-400">
-            Blog
+            blog
           </a>
           .
         </p>

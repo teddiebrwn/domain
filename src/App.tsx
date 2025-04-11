@@ -70,7 +70,7 @@ export default function App() {
         >
           Powered by{" "}
           <Typewriter
-            words={["TypeScript", "Vercel", "V0", "clean code ✨", "coffee ☕"]}
+            words={["TypeScript", "Vercel", "V0", "Clean Code ✨", "Coffee ☕"]}
             loop={true}
             cursor
             cursorStyle="|"

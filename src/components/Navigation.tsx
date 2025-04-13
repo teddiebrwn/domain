@@ -13,11 +13,20 @@ export const Navigation = () => {
 
   const links: NavLink[] = [
     { label: "Projects", href: "#projects" },
-    { label: "GitHub", href: "https://github.com/tranvu", isExternal: true },
-    { label: "X", href: "https://x.com/tranvu", isExternal: true },
+    {
+      label: "GitHub",
+      href: "https://github.com/teddiebrwn",
+      isExternal: true,
+    },
+    { label: "X", href: "https://x.com/tranvu_dev?s=21", isExternal: true },
+    {
+      label: "Facebook",
+      href: "https://www.facebook.com/teddievux/",
+      isExternal: true,
+    },
   ];
 
-  const email = "hi@tranvu.dev";
+  const email = "contact@tranvu.dev";
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText(email);

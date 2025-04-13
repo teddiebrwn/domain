@@ -1,7 +1,7 @@
 {
   "name": "tranvu.dev",
   "short_name": "tranvu",
-  "description": "Building minimal, pragmatic software solutions",
+  "description": "Building minimal, pragmatic software solutions. Software Engineer focused on React, TypeScript, and modern web technologies.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

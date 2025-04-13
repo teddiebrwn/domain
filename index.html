@@ -1,74 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <title>Tran Vu / fullstack dev @ tranvu.dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO Meta -->
+    <!-- Primary Meta Tags -->
+    <title>
+      Tran Vu | Software Engineer - React, TypeScript & Modern Web Development
+    </title>
+    <meta
+      name="title"
+      content="Tran Vu | Software Engineer - React, TypeScript & Modern Web Development"
+    />
     <meta
       name="description"
-      content="Building fast, minimal products on the modern web."
+      content="Expert software engineer specializing in React, TypeScript, and modern web development. Building minimal, pragmatic software solutions with focus on performance and user experience."
     />
     <meta name="author" content="Tran Vu" />
-    <meta name="theme-color" content="#0c0c0c" />
     <meta
       name="keywords"
-      content="Tran Vu, tranvu.dev, fullstack, TypeScript, React, Vite, web developer, blog, projects, trvux, trv, tranvu, tran vu, tranvudev, tran vu dev, trần vũ, Trần vũ, Trần Vũ, Vũ dev, Vũ dev, Trần dev"
+      content="software engineer, react developer, typescript expert, web development, frontend engineer, full stack developer, minimal design, UI/UX, javascript developer, modern web technologies"
     />
-    <link rel="canonical" href="https://tranvu.dev" />
 
-    <!-- Favicon chuẩn Google -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="shortcut icon" href="/icon.ico" />
+    <!-- Theme Color -->
+    <meta
+      name="theme-color"
+      content="#000000"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Tran Vu / fullstack dev @ tranvu.dev" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tranvu.dev" />
+    <meta
+      property="og:title"
+      content="Tran Vu | Software Engineer - React, TypeScript & Modern Web Development"
+    />
     <meta
       property="og:description"
-      content="Building fast, minimal products on the modern web."
+      content="Expert software engineer specializing in React, TypeScript, and modern web development. Building minimal, pragmatic software solutions with focus on performance and user experience."
     />
-    <meta property="og:image" content="https://tranvu.dev/opengraph.png" />
-    <meta property="og:url" content="https://tranvu.dev" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="tranvu.dev" />
+    <meta property="og:image" content="https://tranvu.dev/og.png" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Tran Vu / fullstack dev @ tranvu.dev" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://tranvu.dev" />
     <meta
-      name="twitter:description"
-      content="Building fast, minimal products on the modern web."
+      property="twitter:title"
+      content="Tran Vu | Software Engineer - React, TypeScript & Modern Web Development"
     />
-    <meta name="twitter:image" content="https://tranvu.dev/opengraph.png" />
+    <meta
+      property="twitter:description"
+      content="Expert software engineer specializing in React, TypeScript, and modern web development. Building minimal, pragmatic software solutions with focus on performance and user experience."
+    />
+    <meta property="twitter:image" content="https://tranvu.dev/og.png" />
 
-    <!-- Preload font -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=SF+Mono:wght@400;500&display=swap"
     />
-
-    <!-- Font (Inter fallback only) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=SF+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-  </head>
 
-  <body
-    style="
-      font-family: 'SF Pro Text', 'Inter', system-ui, -apple-system,
-        BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    "
-  >
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="/src/main.tsx" as="script" type="module" />
+    <link rel="preload" href="/src/index.css" as="style" />
+
+    <!-- Security Headers -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:; script-src 'self' 'unsafe-inline';"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=()"
+    />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Tran Vu",
+        "url": "https://tranvu.dev",
+        "sameAs": ["https://github.com/tranvu", "https://x.com/tranvu"],
+        "jobTitle": "Software Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "tranvu.dev"
+        },
+        "description": "Building minimal, pragmatic software solutions. Focused on React, TypeScript, and modern web technologies."
+      }
+    </script>
+  </head>
+  <body class="antialiased">
+    <script>
+      // Immediately set initial theme to prevent flash
+      (function () {
+        let theme = localStorage.getItem("theme") || "dark";
+        document.documentElement.classList.add(theme);
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Instant Page for faster navigation -->
+    <script
+      src="//instant.page/5.2.0"
+      type="module"
+      integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"
+    ></script>
   </body>
 </html>

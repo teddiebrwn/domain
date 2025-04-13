@@ -1,76 +1,43 @@
 @import "tailwindcss";
 
-:root {
-  font-family: "SF Pro Text", "Inter", system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: light dark;
-  color: #fafafa;
-  background-color: #0c0c0c;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  @apply font-medium underline transition-colors duration-300 underline-offset-2 decoration-neutral-500;
-  color: #fafafa;
-}
-a:hover {
-  @apply decoration-neutral-300;
-}
-
-@media (prefers-color-scheme: light) {
+@layer base {
   :root {
-    color: #1a1a1a;
-    background-color: #fafafa;
+    --font-mono: "SF Mono", Menlo, Monaco, "Courier New", monospace;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+      sans-serif;
   }
 
-  a {
-    color: #3b3b3b;
+  html {
+    font-family: var(--font-sans);
+    @apply antialiased;
   }
 
-  a:hover {
-    color: #000;
+  body {
+    @apply bg-white text-neutral-900 transition-colors duration-200;
   }
 
-  p {
-    color: #444;
+  html.dark body {
+    @apply bg-black text-white;
   }
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+@layer components {
+  .link {
+    @apply transition-opacity duration-200 hover:opacity-70;
+  }
 
-html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+  .card {
+    @apply p-6 border border-neutral-200 dark:border-neutral-800 
+           hover:border-neutral-400 dark:hover:border-neutral-600 
+           rounded-lg transition-all duration-200;
+  }
 
-.link-clean {
-  @apply relative inline-block no-underline transition-all duration-300 ease-out text-inherit;
-}
-.link-clean::after {
-  content: "";
-  @apply absolute bottom-0 left-0 h-[1px] w-0 bg-current transition-all duration-300;
-}
-.link-clean:hover::after {
-  @apply w-full;
-}
-body {
-  padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
+  .badge {
+    @apply px-2 py-0.5 text-xs rounded-full bg-neutral-100 dark:bg-neutral-800 
+           text-neutral-600 dark:text-neutral-400 font-mono transition-colors duration-200;
+  }
+
+  .section-title {
+    @apply text-sm font-mono text-neutral-500 dark:text-neutral-400 mb-6 transition-colors duration-200;
+  }
 }

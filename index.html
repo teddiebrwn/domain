@@ -120,13 +120,6 @@
     </script>
   </head>
   <body class="antialiased">
-    <script>
-      // Immediately set initial theme to prevent flash
-      (function () {
-        let theme = localStorage.getItem("theme") || "dark";
-        document.documentElement.classList.add(theme);
-      })();
-    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 

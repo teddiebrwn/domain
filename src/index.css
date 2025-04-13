@@ -12,12 +12,24 @@
     @apply antialiased;
   }
 
+  html,
   body {
-    @apply bg-white text-neutral-900 transition-colors duration-200;
+    @apply transition-colors duration-200;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-slate-50 to-white text-slate-900;
   }
 
   html.dark body {
     @apply bg-black text-white;
+  }
+
+  /* Ensure all theme-related transitions are smooth */
+  *,
+  *::before,
+  *::after {
+    @apply transition-colors duration-200;
   }
 }
 
@@ -27,17 +39,32 @@
   }
 
   .card {
-    @apply p-6 border border-neutral-200 dark:border-neutral-800 
-           hover:border-neutral-400 dark:hover:border-neutral-600 
-           rounded-lg transition-all duration-200;
+    @apply p-6 rounded-lg transition-all duration-200
+           bg-white/70 dark:bg-black border-0
+           backdrop-blur-md shadow-xl shadow-slate-200/50 dark:shadow-none
+           hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-none
+           dark:border dark:border-neutral-800;
   }
 
   .badge {
-    @apply px-2 py-0.5 text-xs rounded-full bg-neutral-100 dark:bg-neutral-800 
-           text-neutral-600 dark:text-neutral-400 font-mono transition-colors duration-200;
+    @apply px-2 py-0.5 text-xs rounded-full 
+           bg-slate-100 dark:bg-neutral-800 
+           text-slate-600 dark:text-neutral-400 
+           font-mono transition-colors duration-200
+           border border-slate-200/50 dark:border-neutral-700
+           shadow-sm;
   }
 
   .section-title {
-    @apply text-sm font-mono text-neutral-500 dark:text-neutral-400 mb-6 transition-colors duration-200;
+    @apply text-sm font-mono text-slate-500 dark:text-neutral-400 
+           mb-6 transition-colors duration-200 
+           tracking-wider font-medium;
+  }
+
+  .glass-card {
+    @apply bg-white/40 dark:bg-black/40
+           backdrop-blur-md
+           border border-white/20 dark:border-neutral-800
+           shadow-xl shadow-slate-200/50 dark:shadow-none;
   }
 }

@@ -39,7 +39,7 @@ export const Navigation = () => {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.2 }}
-      className="fixed flex items-center gap-1 p-1 -translate-x-1/2 border rounded-full bottom-8 left-1/2 bg-white/80 dark:bg-black/80 backdrop-blur-sm border-neutral-200 dark:border-neutral-800"
+      className="fixed flex items-center gap-1 p-1 -translate-x-1/2 rounded-full bottom-8 left-1/2 glass-card"
     >
       {links.map((link) => (
         <motion.a
@@ -47,16 +47,15 @@ export const Navigation = () => {
           href={link.href}
           target={link.isExternal ? "_blank" : undefined}
           rel={link.isExternal ? "noopener noreferrer" : undefined}
-          className="px-4 py-2 font-mono text-sm transition-colors text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+          className="px-4 py-2 font-mono text-sm transition-colors rounded-full text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-white/5"
           whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
         >
           {link.label}
         </motion.a>
       ))}
       <motion.button
         onClick={copyEmail}
-        className="px-4 py-2 font-mono text-sm transition-colors text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white"
+        className="px-4 py-2 font-mono text-sm transition-colors rounded-full text-slate-600 dark:text-neutral-400 hover:text-slate-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-white/5"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >

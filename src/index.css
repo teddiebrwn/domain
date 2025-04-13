@@ -1,35 +1,62 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
     --font-mono: "SF Mono", Menlo, Monaco, "Courier New", monospace;
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
       sans-serif;
+
+    /* Light theme - Vercel inspired */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --muted: 240 4.8% 45.9%;
+    --border: 240 5.9% 90%;
+    --accent: 240 5.9% 10%;
+
+    /* Dark theme - Vercel inspired */
+    --background-dark: 240 10% 3.9%;
+    --foreground-dark: 0 0% 98%;
+    --muted-dark: 240 5% 64.9%;
+    --border-dark: 240 3.7% 15.9%;
+    --accent-dark: 0 0% 98%;
   }
 
+  /* Smooth scrolling and better touch handling */
   html {
     font-family: var(--font-sans);
-    @apply antialiased;
+    @apply antialiased scroll-smooth touch-manipulation;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Better responsive behavior */
   html,
   body {
-    @apply transition-colors duration-200;
+    @apply transition-colors duration-200 min-h-screen;
+    overflow-x: hidden;
   }
 
   body {
-    @apply bg-gradient-to-br from-slate-50 to-white text-slate-900;
+    @apply bg-bg text-fg selection:bg-accent/10 selection:text-accent;
   }
 
   html.dark body {
-    @apply bg-black text-white;
+    @apply bg-bg-dark text-fg-dark selection:bg-accent-dark/10 selection:text-accent-dark;
   }
 
-  /* Ensure all theme-related transitions are smooth */
+  /* Smooth transitions */
   *,
   *::before,
   *::after {
     @apply transition-colors duration-200;
+  }
+
+  /* Better focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg dark:ring-accent-dark dark:ring-offset-bg-dark;
   }
 }
 
@@ -40,31 +67,53 @@
 
   .card {
     @apply p-6 rounded-lg transition-all duration-200
-           bg-white/70 dark:bg-black border-0
-           backdrop-blur-md shadow-xl shadow-slate-200/50 dark:shadow-none
-           hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-none
-           dark:border dark:border-neutral-800;
+           bg-bg dark:bg-bg-dark
+           border border-border/40 dark:border-border-dark/40
+           shadow-lg hover:shadow-xl
+           backdrop-blur-sm;
   }
 
   .badge {
     @apply px-2 py-0.5 text-xs rounded-full 
-           bg-slate-100 dark:bg-neutral-800 
-           text-slate-600 dark:text-neutral-400 
+           bg-muted/10 dark:bg-muted-dark/10
+           text-muted dark:text-muted-dark
            font-mono transition-colors duration-200
-           border border-slate-200/50 dark:border-neutral-700
-           shadow-sm;
+           border border-border/40 dark:border-border-dark/40;
   }
 
   .section-title {
-    @apply text-sm font-mono text-slate-500 dark:text-neutral-400 
+    @apply text-sm font-mono text-muted dark:text-muted-dark
            mb-6 transition-colors duration-200 
            tracking-wider font-medium;
   }
 
   .glass-card {
-    @apply bg-white/40 dark:bg-black/40
+    @apply bg-bg/40 dark:bg-bg-dark/40
            backdrop-blur-md
-           border border-white/20 dark:border-neutral-800
-           shadow-xl shadow-slate-200/50 dark:shadow-none;
+           border border-border/20 dark:border-border-dark/20
+           shadow-lg;
+  }
+
+  /* Responsive container padding */
+  .container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Responsive text sizes */
+  .text-responsive {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+
+  /* Responsive headings */
+  .heading-1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+
+  .heading-2 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  .heading-3 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight;
   }
 }

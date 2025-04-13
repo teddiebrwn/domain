@@ -6,12 +6,28 @@ export function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
 
+  const handleToggle = () => {
+    console.log("ThemeToggle clicked:", {
+      currentTheme: theme,
+      isDark,
+      currentClasses: document.documentElement.classList.toString(),
+    });
+
+    try {
+      toggleTheme();
+    } catch (error) {
+      console.error("Error toggling theme:", error);
+    }
+  };
+
   return (
     <motion.button
-      onClick={toggleTheme}
+      onClick={handleToggle}
       className="relative w-12 h-6 rounded-full bg-white/10 dark:bg-white/5 backdrop-blur-lg border border-slate-200/10 transition-colors duration-200"
       whileTap={{ scale: 0.95 }}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+      data-theme-toggle
+      data-current-theme={theme}
     >
       <motion.div
         className="absolute left-0.5 top-0.5 w-5 h-5 rounded-full bg-slate-400 dark:bg-white flex items-center justify-center"
